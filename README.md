@@ -1,70 +1,67 @@
-# GitHub Codespaces ♥️ React
 
-Welcome to your shiny new Codespace running React! We've got everything fired up and running for you to explore React.
+# When building a Dockerfile
+This week we are going to build a Dockerfile for a React application. The application is a simple React application that uses Vite.js as the build tool. The application is already set up and you only need to build a Dockerfile to run the application in a Docker container.
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with the what you're seeing right now - where you go from here is up to you!
+Once you finished building the Dockerfile, check that the application is running correctly in the Docker container. Then submit the Dockerfile and also take and screenshot of the application running and showing your name on the screen.
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+You can submit both files in the following link: [Actividad 5 - Google Forms](https://club.pudin.net/formulario-5)
 
-This project was bootstrapped for you with [Vite](https://vitejs.dev/).
+## Requirements
+- The Dockerfile should be able to run the application in a Docker container.
+- You should change the name const on /src/App.js to your name.
 
-## Available Scripts
+## Tips to code your Dockerfile
 
-In the project directory, you can run:
+- Use the `node:20` image as the base image.
+- Set the working directory to `/app`.
+- Install the dependencies.
+- Expose port 3000.
+- Set the default command to run the development server.
 
-### `npm start`
+These are only tips to build a Dockerfile but you need to create your own Dockerfile.
 
-We've already run this for you in the `Codespaces: server` terminal window below. If you need to stop the server for any reason you can just run `npm start` again to bring it back online.
+1. **Build the Docker image**:
+```bash
+docker build -t appName .  # <--  Don't forget the dot at the end of the command
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000/](http://localhost:3000/) in the built-in Simple Browser (`Cmd/Ctrl + Shift + P > Simple Browser: Show`) to view your running application.
+2. **Run the Docker container**:
+```bash
+docker run -p 3000:3000 appName
+```
 
-The page will reload automatically when you make changes.\
-You may also see any lint errors in the console.
+# Localhost setup instructions
+- If you want to run the application locally, follow the instructions below.
+- You can use also these instructions as a point of reference to build your Dockerfile.
 
-### `npm test`
+1. **Install Vite and React dependencies**:
+```bash
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Start the development server**:
+```bash
+npm start
+```
 
-### `npm run build`
+That's it! Your React project is now set up with Vite.js. You can start developing your React application with a fast development experience provided by Vite.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This vite-react template includes the following features:
+- Runs on port 3000
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Other examples of Dockerfile as reference
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Ruby on Rails
+```Dockerfile
+FROM ruby:3.0
 
-## Learn More
+WORKDIR /app
 
-You can learn more in the [Vite documentation](https://vitejs.dev/guide/).
+COPY . .
 
-To learn Vitest, a Vite-native testing framework, go to [Vitest documentation](https://vitest.dev/guide/)
+RUN bundle install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+EXPOSE 3000
 
-### Code Splitting
-
-This section has moved here: [https://sambitsahoo.com/blog/vite-code-splitting-that-works.html](https://sambitsahoo.com/blog/vite-code-splitting-that-works.html)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer](https://github.com/btd/rollup-plugin-visualizer#rollup-plugin-visualizer)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf](https://dev.to/hamdankhan364/simplifying-progressive-web-app-pwa-development-with-vite-a-beginners-guide-38cf)
-
-### Advanced Configuration
-
-This section has moved here: [https://vitejs.dev/guide/build.html#advanced-base-options](https://vitejs.dev/guide/build.html#advanced-base-options)
-
-### Deployment
-
-This section has moved here: [https://vitejs.dev/guide/build.html](https://vitejs.dev/guide/build.html)
-
-### Troubleshooting
-
-This section has moved here: [https://vitejs.dev/guide/troubleshooting.html](https://vitejs.dev/guide/troubleshooting.html)
+CMD ["rails", "server", "-b", "3000"]
+```
