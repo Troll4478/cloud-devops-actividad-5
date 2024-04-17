@@ -43,6 +43,9 @@ npm install
 ```bash
 npm start
 ```
+```bash
+npx vite --port 3000
+```
 
 That's it! Your React project is now set up with Vite.js. You can start developing your React application with a fast development experience provided by Vite.
 
