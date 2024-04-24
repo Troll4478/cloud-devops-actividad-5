@@ -3,7 +3,7 @@ import './App.css';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - CHANGE THE NAME VARIABLE TO YOUR NAME - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-const name = 'Fulanito de Tal';
+const name = 'Omar';
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 // - - - - - - - CHANGE THE NAME VARIABLE TO YOUR NAME - - - - - - - - -
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
