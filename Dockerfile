@@ -1,17 +1,17 @@
-#Pull the official image of node version 20
+# Pull the official image of Node.js (version 20)
 FROM node:20
 
-#Create app directory
+# Create app directory
 WORKDIR /app
 
-#Copy app source 
+# Copy app source code
 COPY . /app
 
-#Install app dependencies
+# Install app dependencies
 RUN npm install
 
-#Expose port and start application
+# Expose port
 EXPOSE 3000
 
-#Start the application
-CMD ["npm", "run", "start", "--", "--host", "0 0 0 0"]
+# Start the application
+CMD ["npm", "run", "start", "--", "--host", "0.0.0.0"]
